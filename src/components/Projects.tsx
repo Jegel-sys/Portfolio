@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Laptop, Filter } from 'lucide-react';
+import { Filter } from 'lucide-react';
 import { projects } from '../data/portfolioData';
 import { TechIcon } from './TechIcon';
 import { Project } from '../types';
@@ -72,20 +72,6 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                   onClick={() => onSelectProject(project.id)}
                 >
                   <div className="rounded-2xl border border-[#213252] bg-[#080d17] overflow-hidden shadow-xl group-hover:border-blue-500/40 transition-all duration-300">
-                    {/* Browser Chrome Header */}
-                    <div className="h-6 bg-[#11192b] border-b border-[#1b263e] px-3 flex items-center justify-between">
-                      <div className="flex items-center gap-1.5">
-                        <span className="w-2 h-2 rounded-full bg-red-500/80" />
-                        <span className="w-2 h-2 rounded-full bg-yellow-500/80" />
-                        <span className="w-2 h-2 rounded-full bg-green-500/80" />
-                      </div>
-                      <div className="text-[10px] text-gray-400 font-mono flex items-center gap-1">
-                        <Laptop className="w-2.5 h-2.5" />
-                        <span>{project.category}</span>
-                      </div>
-                      <div className="w-4" />
-                    </div>
-
                     {/* Screenshot Container */}
                     <div className="relative aspect-[16/10] overflow-hidden bg-[#060a12]">
                       <img

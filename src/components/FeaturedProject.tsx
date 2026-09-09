@@ -90,19 +90,6 @@ export const FeaturedProject: React.FC<FeaturedProjectProps> = ({ onSelectProjec
               <div className="relative w-full max-w-[540px] group cursor-pointer" onClick={() => onSelectProject(featuredProject.id)}>
                 {/* Laptop Mockup Wrapper */}
                 <div className="rounded-2xl border border-[#223354] bg-[#0c1220] shadow-2xl overflow-hidden transition-transform duration-300 group-hover:scale-[1.015]">
-                  {/* Laptop Top Bar */}
-                  <div className="h-7 bg-[#131b2d] border-b border-[#1f2c46] px-3.5 flex items-center justify-between">
-                    <div className="flex items-center gap-1.5">
-                      <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                      <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
-                    </div>
-                    <div className="px-3 py-0.5 rounded-md bg-[#090d16] border border-[#1b253b] text-[10px] text-gray-400 font-mono max-w-[200px] truncate">
-                      app.restaurantpro-demo.com
-                    </div>
-                    <div className="w-8" />
-                  </div>
-
                   {/* Screenshot Display */}
                   <div className="relative aspect-[16/10] overflow-hidden bg-[#060a12]">
                     <img

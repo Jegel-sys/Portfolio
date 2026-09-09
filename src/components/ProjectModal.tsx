@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { X, Check, Laptop, Layers, Calendar, Server, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, Check, Laptop, Layers, Calendar, Server } from 'lucide-react';
 import { Project } from '../types';
 import { TechIcon } from './TechIcon';
 
@@ -30,9 +30,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
   const gallery = project.images && project.images.length > 0 ? project.images : [project.image];
   const hasMultipleImages = gallery.length > 1;
-
-  const goToPrev = () => setActiveImage((i) => (i === 0 ? gallery.length - 1 : i - 1));
-  const goToNext = () => setActiveImage((i) => (i === gallery.length - 1 ? 0 : i + 1));
 
   return (
     <div
@@ -65,38 +62,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         <div className="p-6 sm:p-8 space-y-6 max-h-[80vh] overflow-y-auto">
           {/* Project Image Banner / Screenshot Gallery */}
           <div>
-            <div className="rounded-2xl border border-[#1f2d47] overflow-hidden bg-[#070b13] aspect-[16/9] relative shadow-lg group">
+            <div className="rounded-2xl border border-[#1f2d47] overflow-hidden bg-[#070b13] aspect-[16/9] relative shadow-lg">
               <img
                 src={gallery[activeImage]}
                 alt={`${project.title} screenshot ${activeImage + 1}`}
-                className="w-full h-full object-cover object-top transition-all duration-300 group-hover:object-contain"
+                className="w-full h-full object-contain"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0d1424] via-transparent to-transparent opacity-60 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none" />
-
-              {hasMultipleImages && (
-                <>
-                  <button
-                    type="button"
-                    onClick={goToPrev}
-                    aria-label="Previous screenshot"
-                    className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-[#0a0f1c]/80 border border-[#1f2d47] text-gray-300 hover:text-white hover:bg-[#131f38] transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 cursor-pointer"
-                  >
-                    <ChevronLeft className="w-4 h-4" />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={goToNext}
-                    aria-label="Next screenshot"
-                    className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-[#0a0f1c]/80 border border-[#1f2d47] text-gray-300 hover:text-white hover:bg-[#131f38] transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100 cursor-pointer"
-                  >
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                  <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-[#0a0f1c]/80 border border-[#1f2d47] text-[11px] font-mono text-gray-300">
-                    {activeImage + 1} / {gallery.length}
-                  </div>
-                </>
-              )}
             </div>
 
             {/* Thumbnail Strip */}
