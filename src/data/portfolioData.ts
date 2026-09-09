@@ -238,6 +238,21 @@ export const experiences: ExperienceItem[] = [
     technologies: ["Node.js", "Express.js", "React", "EJS", "Git", "GitHub"]
   },
   {
+    position: "Network Engineer",
+    company: "D'Heights Hotel and Casino",
+    date: "February 2025 – August 2026",
+    description: "Deployed on-site at D'Heights Hotel and Casino (Clark, Pampanga) to support network infrastructure whenever the department was short-staffed, alongside web development duties at Core System.",
+    responsibilities: [
+      "Maintained computer networks and systems, including software, mainframes, VPNs, rack servers, routers, switches, and other physical hardware.",
+      "Installed and configured network equipment to update or fix hardware and software issues.",
+      "Updated virus protection software to keep data and communications protected.",
+      "Monitored computer systems and networks to improve overall performance.",
+      "Communicated networking issues to employees and management, especially when training new users.",
+      "Fixed software and hardware configuration issues for users on-demand or through inspection of the systems."
+    ],
+    technologies: ["Network Administration", "VPN", "Routers & Switches", "Server Hardware"]
+  },
+  {
     position: "Savings Bookkeeper / Posting Clerk",
     company: "Saviour Bank",
     date: "June 2023 – February 2025",
