@@ -48,7 +48,7 @@ export interface ServiceItem {
 }
 
 export interface SocialLink {
-  platform: 'GitHub' | 'LinkedIn' | 'Email';
+  platform: 'GitHub' | 'LinkedIn' | 'Email' | 'Messenger';
   url: string;
   label: string;
   username?: string;

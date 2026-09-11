@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Mail, Github, Linkedin } from 'lucide-react';
+import { ArrowRight, Mail, Github, Linkedin, MessageCircle } from 'lucide-react';
 import { personalInfo, socialLinks } from '../data/portfolioData';
 import { TechIcon } from './TechIcon';
 
@@ -25,6 +25,8 @@ export const Hero: React.FC<HeroProps> = () => {
         return <Linkedin className="w-4 h-4" />;
       case 'Email':
         return <Mail className="w-4 h-4" />;
+      case 'Messenger':
+        return <MessageCircle className="w-4 h-4" />;
       default:
         return <Mail className="w-4 h-4" />;
     }

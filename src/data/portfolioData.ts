@@ -79,6 +79,12 @@ export const socialLinks: SocialLink[] = [
     url: 'https://mail.google.com/mail/?view=cm&fs=1&to=Jeljelcabuso@gmail.com',
     label: 'Send Email',
     username: 'Jeljelcabuso@gmail.com'
+  },
+  {
+    platform: 'Messenger',
+    url: 'https://m.me/ginabarin.cabuso',
+    label: 'Message on Messenger',
+    username: 'ginabarin.cabuso'
   }
 ];
 

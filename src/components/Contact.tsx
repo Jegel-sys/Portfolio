@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Send, CheckCircle2, AlertCircle, Loader2, Github, Linkedin, Copy, Check } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle2, AlertCircle, Loader2, Github, Linkedin, Copy, Check, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { personalInfo, socialLinks } from '../data/portfolioData';
 
 // Web3Forms access key — tied to jeljelcabuso@gmail.com. Safe to expose client-side;
@@ -116,6 +116,27 @@ export const Contact: React.FC = () => {
 
             {/* Direct Contact Cards */}
             <div className="space-y-3 pt-2">
+              {/* Messenger Quick-Chat Card */}
+              <a
+                href={socialLinks.find((s) => s.platform === 'Messenger')?.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-xl bg-[#0c1220] border border-[#1b2842] hover:border-blue-500/40 transition-all duration-200 flex items-center justify-between cursor-pointer group shadow-xs"
+              >
+                <div className="flex items-center gap-3.5">
+                  <div className="w-10 h-10 rounded-lg bg-[#121a2d] border border-[#1e2a44] flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    <MessageCircle className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-xs text-gray-400 block font-mono">Quick chat</span>
+                    <span className="text-sm font-semibold text-white group-hover:text-blue-400 transition-colors">
+                      Message me on Messenger
+                    </span>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+              </a>
+
               {/* Email Card */}
               <div
                 onClick={handleCopyEmail}
@@ -175,6 +196,7 @@ export const Contact: React.FC = () => {
                     {item.platform === 'GitHub' && <Github className="w-4 h-4" />}
                     {item.platform === 'LinkedIn' && <Linkedin className="w-4 h-4" />}
                     {item.platform === 'Email' && <Mail className="w-4 h-4" />}
+                    {item.platform === 'Messenger' && <MessageCircle className="w-4 h-4" />}
                   </a>
                 ))}
               </div>
