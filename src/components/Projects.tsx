@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { Filter } from 'lucide-react';
 import { projects } from '../data/portfolioData';
 import { TechIcon } from './TechIcon';
-import { Project } from '../types';
 
 interface ProjectsProps {
   onSelectProject: (id: string) => void;

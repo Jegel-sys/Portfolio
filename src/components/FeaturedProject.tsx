@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Check, Laptop, Smartphone } from 'lucide-react';
+import { ArrowRight, Check, Laptop } from 'lucide-react';
 import { featuredProject } from '../data/portfolioData';
 import { TechIcon } from './TechIcon';
 

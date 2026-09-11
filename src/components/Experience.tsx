@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, Calendar, CheckCircle2 } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import { experiences, education } from '../data/portfolioData';
 import { TechIcon } from './TechIcon';
 import dhvsuLogo from '../assets/images/dhvsu-logo.webp';

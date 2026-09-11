@@ -11,7 +11,7 @@ import { Process } from './components/Process';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
-import { projects, featuredProject } from './data/portfolioData';
+import { projects } from './data/portfolioData';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<string>('home');
@@ -49,9 +49,7 @@ export default function App() {
   }, []);
 
   const currentModalProject = selectedProjectId
-    ? (selectedProjectId === featuredProject.id
-        ? featuredProject
-        : projects.find((p) => p.id === selectedProjectId) || null)
+    ? projects.find((p) => p.id === selectedProjectId) || null
     : null;
 
   return (
@@ -61,10 +59,7 @@ export default function App() {
 
       {/* Main Content Sections */}
       <main className="flex-1">
-        <Hero onOpenContact={() => {
-          const el = document.getElementById('contact');
-          el?.scrollIntoView({ behavior: 'smooth' });
-        }} />
+        <Hero />
 
         <About />
 

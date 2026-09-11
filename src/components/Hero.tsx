@@ -3,11 +3,7 @@ import { ArrowRight, Mail, Github, Linkedin, MessageCircle } from 'lucide-react'
 import { personalInfo, socialLinks } from '../data/portfolioData';
 import { TechIcon } from './TechIcon';
 
-interface HeroProps {
-  onOpenContact?: () => void;
-}
-
-export const Hero: React.FC<HeroProps> = () => {
+export const Hero: React.FC = () => {
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {

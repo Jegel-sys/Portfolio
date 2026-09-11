@@ -19,7 +19,6 @@ Personal portfolio website of **Jegel Cabuso**, a Full-Stack Web Developer. Buil
 - [Vite](https://vitejs.dev) — build tool & dev server
 - [Tailwind CSS 4](https://tailwindcss.com) — styling
 - [Lucide React](https://lucide.dev) — icons
-- [Motion](https://motion.dev) — animations
 
 ## Run Locally
 

@@ -1,15 +1,13 @@
 export interface Project {
   id: string;
   title: string;
-  category: 'Web Apps' | 'Management Systems' | 'APIs';
+  category: 'Web Apps' | 'Management Systems';
   description: string;
   detailedDescription?: string;
   image: string;
   images?: string[];
   technologies: string[];
   features: string[];
-  liveUrl?: string;
-  sourceUrl?: string;
   featured?: boolean;
 }
 
@@ -20,7 +18,7 @@ export interface SkillItem {
 
 export interface SkillCategory {
   title: string;
-  categoryKey: 'frontend' | 'backend' | 'database' | 'tools' | 'general';
+  categoryKey: 'backend' | 'database' | 'tools' | 'general';
   skills: SkillItem[];
 }
 

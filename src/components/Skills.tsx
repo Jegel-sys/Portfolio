@@ -6,8 +6,6 @@ import { TechIcon } from './TechIcon';
 export const Skills: React.FC = () => {
   const getCategoryIcon = (key: string) => {
     switch (key) {
-      case 'frontend':
-        return <Layout className="w-4 h-4 text-blue-400" />;
       case 'backend':
         return <Server className="w-4 h-4 text-emerald-400" />;
       case 'database':

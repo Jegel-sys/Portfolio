@@ -12,8 +12,6 @@
     background-color: #090d16;
     color: #f3f4f6;
     overflow-x: hidden;
-    selection-background-color: #2563eb;
-    selection-color: #ffffff;
   }
 
   ::selection {

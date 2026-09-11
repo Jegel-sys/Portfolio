@@ -157,24 +157,6 @@ export const skillCategories: SkillCategory[] = [
   }
 ];
 
-export const featuredProject: Project = {
-  id: "restaurant-management-system",
-  title: "Restaurant Management System",
-  category: "Management Systems",
-  description: "A multi-branch restaurant management platform that centralizes sales analytics, menu control, and daily operations across every branch. It helps owners and staff track sales, manage inventory, and process orders in real time.",
-  detailedDescription: "Built as an all-in-one operations hub for multi-branch restaurant groups. Features a live sales analytics dashboard with branch-to-branch performance comparison, menu and category management, inventory tracking with low-stock alerts, order processing across dine-in, takeaway, and online channels, and role-based admin access per branch.",
-  image: restaurantImg,
-  images: restaurantGallery,
-  technologies: ["React", "Node.js", "MySQL", "Tailwind CSS"],
-  features: [
-    "Multi-Branch Sales Dashboard",
-    "Menu & Inventory Management",
-    "Order & Billing Processing",
-    "Real-Time Analytics & Reports"
-  ],
-  featured: true
-};
-
 export const projects: Project[] = [
   {
     id: "restaurant-management-system",
@@ -228,6 +210,8 @@ export const projects: Project[] = [
     featured: false
   }
 ];
+
+export const featuredProject: Project = projects.find((p) => p.featured) as Project;
 
 export const experiences: ExperienceItem[] = [
   {

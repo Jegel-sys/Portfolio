@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { X, Check, Laptop, Layers, Calendar, Server } from 'lucide-react';
+import { X, Check } from 'lucide-react';
 import { Project } from '../types';
 import { TechIcon } from './TechIcon';
 
