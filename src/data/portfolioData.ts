@@ -110,7 +110,7 @@ export const statistics: StatItem[] = [
   { value: "3+", label: "Projects Completed" },
   { value: "10+", label: "Technologies" },
   { value: "4+", label: "Years Experience" },
-  { value: "3+", label: "Clients / Systems Built" }
+  { value: "3+", label: "Production Systems Delivered" }
 ];
 
 export const skillCategories: SkillCategory[] = [
