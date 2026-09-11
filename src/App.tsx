@@ -7,6 +7,7 @@ import { FeaturedProject } from './components/FeaturedProject';
 import { Projects } from './components/Projects';
 import { Experience } from './components/Experience';
 import { Services } from './components/Services';
+import { Process } from './components/Process';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
@@ -18,7 +19,7 @@ export default function App() {
 
   // Scroll spy to update active navigation state
   useEffect(() => {
-    const sections = ['home', 'about', 'skills', 'featured-project', 'projects', 'experience', 'services', 'contact'];
+    const sections = ['home', 'about', 'skills', 'featured-project', 'projects', 'experience', 'services', 'process', 'contact'];
     
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200;
@@ -29,9 +30,11 @@ export default function App() {
           const top = el.offsetTop;
           const height = el.offsetHeight;
           if (scrollPosition >= top && scrollPosition < top + height) {
-            // Map featured-project to projects for nav highlights
+            // Map sub-sections without their own nav link to the closest nav item
             if (sectionId === 'featured-project') {
               setActiveSection('projects');
+            } else if (sectionId === 'process') {
+              setActiveSection('services');
             } else {
               setActiveSection(sectionId);
             }
@@ -74,6 +77,8 @@ export default function App() {
         <Experience />
 
         <Services />
+
+        <Process />
 
         <Contact />
       </main>
