@@ -57,6 +57,28 @@ export const Services: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {/* Budget CTA */}
+        <div className="mt-10 p-6 sm:p-8 rounded-2xl bg-[#0c1220]/90 border border-[#1a273f] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <h3 className="text-base sm:text-lg font-semibold text-white tracking-tight">
+              Have a project in mind?
+            </h3>
+            <p className="text-sm text-gray-400 mt-1">
+              Let's discuss your project scope and budget — every engagement is scoped to fit what you need.
+            </p>
+          </div>
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-blue-600 hover:bg-blue-500 transition-all duration-200 shadow-md shadow-blue-600/25 cursor-pointer"
+          >
+            <span>Let's Talk</span>
+          </a>
+        </div>
       </div>
     </section>
   );
