@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.vercel.portfolio_rho_eight_bx4ox5vbrn.twa",
+        "sha256_cert_fingerprints": ["B4:E6:57:C5:83:05:C3:A4:B9:F2:59:8B:E7:27:9A:D5:16:54:0D:4D:EB:CE:3B:CC:CD:3B:B2:6F:7B:F7:C2:B3"]
+      }
+    }]
