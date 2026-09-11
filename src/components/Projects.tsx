@@ -106,9 +106,9 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                   {/* Key Features Bullet List */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-1 text-xs sm:text-sm text-gray-400">
                     {project.features.map((feature) => (
-                      <div key={feature} className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
-                        <span className="truncate">{feature}</span>
+                      <div key={feature} className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0 mt-1.5" />
+                        <span>{feature}</span>
                       </div>
                     ))}
                   </div>
