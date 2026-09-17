@@ -40,6 +40,10 @@ export default defineConfig(() => {
         },
         workbox: {
           globPatterns: ['**/*.{js,css,html,svg,png,jpg,jpeg,webp,woff2}'],
+          // Don't let the SPA fallback swallow navigations to real static
+          // files (e.g. the resume PDF) — otherwise the service worker
+          // serves index.html instead of the actual file.
+          navigateFallbackDenylist: [/^\/resume\//],
         },
       }),
     ],
