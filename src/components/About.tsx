@@ -2,18 +2,24 @@ import React, { useEffect, useState } from 'react';
 import { ArrowRight, Lightbulb, BookOpen, Users, Check, Download } from 'lucide-react';
 import { personalInfo, aboutHighlights, statistics } from '../data/portfolioData';
 
+const RESUME_PDF_URL = '/resume/Jegel-Cabuso-Resume.pdf';
+
 export const About: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [resumeModalOpen, setResumeModalOpen] = useState(false);
 
   // Close on Escape key
   useEffect(() => {
-    if (!modalOpen) return;
+    if (!modalOpen && !resumeModalOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setModalOpen(false);
+      if (e.key === 'Escape') {
+        setModalOpen(false);
+        setResumeModalOpen(false);
+      }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [modalOpen]);
+  }, [modalOpen, resumeModalOpen]);
 
   const getHighlightIcon = (title: string) => {
     switch (title) {
@@ -67,17 +73,18 @@ export const About: React.FC = () => {
                 <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all" />
               </button>
 
-              <a
+              <button
                 id="about-resume-view-btn"
-                href="/resume/Jegel-Cabuso-Resume.pdf"
+                type="button"
+                onClick={() => setResumeModalOpen(true)}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium text-blue-400 hover:text-blue-300 bg-transparent hover:bg-[#111828] border border-[#213252] hover:border-blue-500/40 transition-all duration-200 cursor-pointer"
               >
                 <span>View Resume</span>
-              </a>
+              </button>
 
               <a
                 id="about-resume-download-btn"
-                href="/resume/Jegel-Cabuso-Resume.pdf"
+                href={RESUME_PDF_URL}
                 download="Jegel-Cabuso-Resume.pdf"
                 className="inline-flex items-center justify-center w-10 h-10 rounded-full text-gray-400 hover:text-white bg-[#111828] hover:bg-[#162238] border border-[#213252] hover:border-blue-500/40 transition-all duration-200 cursor-pointer"
                 aria-label="Download Resume"
@@ -188,6 +195,50 @@ export const About: React.FC = () => {
                 Contact Jegel
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Resume Viewer Modal (embedded, so it stays in-app on the installed APK) */}
+      {resumeModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+          onClick={() => setResumeModalOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-3xl h-[85vh] bg-[#0d1424] border border-[#1e2f4f] rounded-2xl p-4 sm:p-6 shadow-2xl flex flex-col gap-4 text-left"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between pb-3 border-b border-[#1b2844]">
+              <div>
+                <span className="text-xs font-semibold uppercase tracking-wider text-blue-400">Resume</span>
+                <h3 className="text-xl font-bold text-white mt-0.5">{personalInfo.name}</h3>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href={RESUME_PDF_URL}
+                  download="Jegel-Cabuso-Resume.pdf"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-gray-300 hover:text-white bg-[#111828] hover:bg-[#162238] border border-[#213252] hover:border-blue-500/40 transition-all duration-200"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span>Download</span>
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setResumeModalOpen(false)}
+                  className="p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-[#15213b]"
+                  aria-label="Close resume viewer"
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+
+            <iframe
+              src={RESUME_PDF_URL}
+              title={`${personalInfo.name} Resume`}
+              className="flex-1 w-full rounded-lg border border-[#1b2844] bg-[#f3f4f6]"
+            />
           </div>
         </div>
       )}
