@@ -70,8 +70,6 @@ export const About: React.FC = () => {
               <a
                 id="about-resume-view-btn"
                 href="/resume/Jegel-Cabuso-Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium text-blue-400 hover:text-blue-300 bg-transparent hover:bg-[#111828] border border-[#213252] hover:border-blue-500/40 transition-all duration-200 cursor-pointer"
               >
                 <span>View Resume</span>
